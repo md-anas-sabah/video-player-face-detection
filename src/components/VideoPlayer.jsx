@@ -12,13 +12,16 @@ function VideoPlayer({ videoFile }) {
       const video = videoRef.current;
       const canvas = new fabric.Canvas(canvasRef.current);
 
+      // Initialize Face-api.js
       await faceapi.nets.tinyFaceDetector.loadFromUri("/models");
       await faceapi.nets.faceLandmark68Net.loadFromUri("/models");
       await faceapi.nets.faceRecognitionNet.loadFromUri("/models");
 
+      // Detect faces in real-time
       video.addEventListener("play", () => {
         const displaySize = { width: video.width, height: video.height };
         faceapi.matchDimensions(canvas.getElement(), displaySize);
+        console.log(displaySize);
 
         setInterval(async () => {
           const detections = await faceapi
@@ -31,6 +34,7 @@ function VideoPlayer({ videoFile }) {
           );
           canvas.clear();
 
+          // Draw rectangles around detected faces
           resizedDetections.forEach((detection) => {
             const { x, y, width, height } = detection.detection.box;
             const rect = new fabric.Rect({
