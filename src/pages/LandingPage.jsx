@@ -16,15 +16,15 @@ function LandingPage() {
               to="/home"
               className="px-8 py-3 text-lg font-semibold rounded dark:bg-violet-400 dark:text-gray-900"
             >
-              Go to Upload Video
+              Upload Video
             </Link>
-            <a
+            <Link
               rel="noopener noreferrer"
-              href="#"
+              to="/about"
               className="px-8 py-3 text-lg font-semibold border rounded dark:border-gray-100"
             >
               About
-            </a>
+            </Link>
           </div>
         </div>
         <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
