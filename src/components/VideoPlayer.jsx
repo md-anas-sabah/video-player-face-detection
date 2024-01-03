@@ -40,7 +40,7 @@ function VideoPlayer({ videoFile }) {
               width,
               height,
               fill: "transparent",
-              stroke: "red",
+              stroke: "blue",
               strokeWidth: 2,
             });
             canvas.add(rect);
@@ -53,12 +53,23 @@ function VideoPlayer({ videoFile }) {
   }, [videoFile]);
 
   return (
-    <div>
-      <video ref={videoRef} width="1210" height="1080" controls>
+    <div className="relative">
+      <video
+        ref={videoRef}
+        width="640"
+        height="480"
+        className="w-full h-full"
+        controls
+      >
         <source src={videoFile} type="video/mp4" />
       </video>
-      <canvas ref={canvasRef} width="1210" height="480"></canvas>
-      {/* <canvas ref={canvasRef} width="640" height="480"></canvas> */}
+
+      <canvas
+        ref={canvasRef}
+        width="640"
+        height="480"
+        className="absolute z-0 top-0 left-0 w-full h-full"
+      ></canvas>
     </div>
   );
 }
