@@ -40,7 +40,7 @@ function VideoPlayer({ videoFile }) {
               width,
               height,
               fill: "transparent",
-              stroke: "blue",
+              stroke: "red",
               strokeWidth: 2,
             });
             canvas.add(rect);
