@@ -10,7 +10,7 @@ function Home() {
   };
 
   return (
-    <div className="bg-black h-screen">
+    <div className="dark:bg-gray-800 h-screen">
       <div className="flex h-screen flex-col justify-center items-center">
         <h1 className="text-white text-3xl -mt-10">
           Video Player With Face Detection
