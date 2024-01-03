@@ -1,18 +1,9 @@
-import { useState } from "react";
-import VideoPlayer from "./components/VideoPlayer.jsx";
+import Home from "./components/Home";
 
 function App() {
-  const [videoFile, setVideoFile] = useState(null);
-
-  const handleVideoChange = (e) => {
-    const file = e.target.files[0];
-    setVideoFile(URL.createObjectURL(file));
-  };
-
   return (
     <div className="bg-black h-screen">
-      <input type="file" accept="video/*" onChange={handleVideoChange} />
-      {videoFile && <VideoPlayer videoFile={videoFile} />}
+      <Home />
     </div>
   );
 }
